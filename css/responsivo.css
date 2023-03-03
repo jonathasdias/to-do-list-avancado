@@ -1,0 +1,41 @@
+@media (max-width: 722px){
+    #todo-list {
+        width: 80%;
+    }
+
+    #add-tarefas {
+        width: 80%;
+    }
+}
+
+@media (max-width: 428px){
+    #todo-list {
+        width: 98%;
+        padding: 2px;
+    }
+
+    #todo-list h2 {
+        font-size: 20px;
+    }
+
+    .container {
+        flex-wrap: wrap;
+    }
+
+    #btn-add {
+        margin-top: 2px;
+    }
+
+    #input-tarefa {
+        width: 100%;
+    }
+
+    #add-tarefas {
+        width: 98%;
+        padding: 2px;
+    }
+
+    .dv-editar {
+        flex-wrap: wrap;
+    }
+}

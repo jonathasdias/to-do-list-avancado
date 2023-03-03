@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do-List</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsivo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="alertaCampoVazio esconder">
+        <h3>Não é possível adicionar uma tarefa com o campo vazio.</h3>
+        <div class="dv-barra">
+            <div class="barra"></div>
+        </div>
+    </div>
+
+    <section id="todo-list">
+        <img src="./imgs/checklist.png" class="imgCheck">
+        <h2>Adicionar Tarefas:</h2>
+        <div class="container">
+            <input type="text" id="input-tarefa" placeholder="Que Tarefa Quer Adicionar?">
+            <button id="btn-add">Adicionar</button>
+        </div>
+    </section>
+
+    <section id="add-tarefas"></section>
+
+    <script src="./javascript/script.js"></script>
+</body>
+</html>
