@@ -4,7 +4,7 @@ let btn_add = document.getElementById('btn-add');
 let campoVazioElement = document.getElementsByClassName('alertaCampoVazio')[0];
 let barra = document.getElementsByClassName('barra')[0];
 
-function criacaoTarefas(){
+function criacaoTarefas() {
     let tarefa = document.createElement('div');
     tarefa.className = 'tarefa'
 
@@ -34,22 +34,22 @@ function criacaoTarefas(){
     add_tarefas.appendChild(tarefa);
 }
 
-function tarefaConcluida(elClick,elPai){
+function tarefaConcluida(elClick, elPai) {
     elClick.classList.toggle('tarefa-concluida')
 
-    if(elClick.title == 'Concluir Tarefa?'){
+    if (elClick.title == 'Concluir Tarefa?') {
         elClick.title = 'Desmarca Tarefa Concluida?'
-        elPai.setAttribute('style','background-color:blue;')
-        elPai.childNodes[3].setAttribute('style','text-decoration: line-through; color:white;')
-    }else {
+        elPai.setAttribute('style', 'background-color:blue;')
+        elPai.childNodes[3].setAttribute('style', 'text-decoration: line-through; color:white;')
+    } else {
         elClick.title = 'Concluir Tarefa?'
         elPai.removeAttribute('style')
         elPai.childNodes[3].removeAttribute('style')
     }
 }
 
-function edicaoTarefa(elClick,elPai) {
-    elClick.setAttribute('hidden','hidden')
+function edicaoTarefa(elClick, elPai) {
+    elClick.setAttribute('hidden', 'hidden')
 
     let tarefa_descricao = elPai.childNodes[3]
 
@@ -73,20 +73,20 @@ function edicaoTarefa(elClick,elPai) {
     dv_aditar.appendChild(btn_cancelar_edicao)
     elPai.appendChild(dv_aditar)
 
-    
-    btn_salvar.addEventListener('click', ()=>{
+
+    btn_salvar.addEventListener('click', () => {
         tarefa_descricao.innerHTML = inputEdit.value
         dv_aditar.remove()
         elClick.removeAttribute('hidden')
     });
 
-    btn_cancelar_edicao.addEventListener('click', ()=>{
+    btn_cancelar_edicao.addEventListener('click', () => {
         dv_aditar.remove()
         elClick.removeAttribute('hidden')
     });
 }
 
-function alertaCampoVazio(){
+function alertaCampoVazio() {
     campoVazioElement.classList.remove('esconder')
     barra.classList.add('animacao-barra')
     btn_add.setAttribute('disabled', 'disabled')
@@ -98,25 +98,46 @@ function alertaCampoVazio(){
     }, 5000)
 }
 
-btn_add.addEventListener('click', ()=>{
-    if(input_tarefa.value.length < 1){
+btn_add.addEventListener('click', () => {
+    if (input_tarefa.value.length < 1) {
         alertaCampoVazio()
-    }else {
+    } else {
         criacaoTarefas();
         input_tarefa.value = ''
         input_tarefa.focus()
     }
 });
 
-add_tarefas.addEventListener('click', (e)=>{
+add_tarefas.addEventListener('click', (e) => {
     let elClick = e.target
     let elPai = elClick.parentNode
 
-    if(elClick.classList.contains("btn-remove")){
+    if (elClick.classList.contains("btn-remove")) {
         elPai.remove()
-    }else if(elClick.classList.contains("btn-concluido")){
-        tarefaConcluida(elClick,elPai)
-    }else if(elClick.classList.contains("btn-editar")){
-        edicaoTarefa(elClick,elPai)
+    } else if (elClick.classList.contains("btn-concluido")) {
+        tarefaConcluida(elClick, elPai)
+    } else if (elClick.classList.contains("btn-editar")) {
+        edicaoTarefa(elClick, elPai)
+    }
+});
+
+document.querySelector('.btn-full').addEventListener('click', () => {
+
+    if (add_tarefas.requestFullscreen) {
+        add_tarefas.requestFullscreen();
+    } else if (add_tarefas.webkitRequestFullscreen) {
+        add_tarefas.webkitRequestFullscreen();
+    } else if (add_tarefas.msRequestFullscreen) {
+        add_tarefas.msRequestFullscreen();
+    }
+});
+
+document.querySelector('.btn-exitFull').addEventListener('click', () => {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
     }
 });
