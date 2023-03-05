@@ -122,7 +122,6 @@ add_tarefas.addEventListener('click', (e) => {
 });
 
 document.querySelector('.btn-full').addEventListener('click', () => {
-
     if (add_tarefas.requestFullscreen) {
         add_tarefas.requestFullscreen();
     } else if (add_tarefas.webkitRequestFullscreen) {
