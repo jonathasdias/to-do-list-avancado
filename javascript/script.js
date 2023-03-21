@@ -1,8 +1,23 @@
+let containerMain = document.getElementById('container');
 let add_tarefas = document.getElementById('add-tarefas');
 let input_tarefa = document.getElementById('input-tarefa');
 let btn_add = document.getElementById('btn-add');
 let campoVazioElement = document.getElementsByClassName('alertaCampoVazio')[0];
 let barra = document.getElementsByClassName('barra')[0];
+// let todasTarefas = []
+
+// if (localStorage.getItem('tarefas')) {
+//     todasTarefas = JSON.parse(localStorage.getItem('tarefas'))
+// }
+
+// function salvarTarefasStorage() {
+//     todasTarefas = Array.from(add_tarefas.children).map(tarefas => tarefas.children[3].innerHTML)
+//     localStorage.setItem('tarefas', JSON.stringify(todasTarefas))
+// }
+
+// function salvarTarefasStorage() {
+//     localStorage.setItem('tarefas', JSON.stringify(todasTarefas))
+// }
 
 function criacaoTarefas() {
     let tarefa = document.createElement('div');
@@ -32,6 +47,8 @@ function criacaoTarefas() {
     tarefa.appendChild(btn_editar);
     tarefa.appendChild(tarefa_descricao);
     add_tarefas.appendChild(tarefa);
+
+    // salvarTarefasStorage()
 }
 
 function tarefaConcluida(elClick, elPai) {
@@ -84,6 +101,8 @@ function edicaoTarefa(elClick, elPai) {
         dv_aditar.remove()
         elClick.removeAttribute('hidden')
     });
+    
+
 }
 
 function alertaCampoVazio() {
@@ -102,6 +121,8 @@ btn_add.addEventListener('click', () => {
     if (input_tarefa.value.length < 1) {
         alertaCampoVazio()
     } else {
+        // let contentText = input_tarefa.value
+        // todasTarefas.push({contentText})
         criacaoTarefas();
         input_tarefa.value = ''
         input_tarefa.focus()
@@ -114,6 +135,8 @@ add_tarefas.addEventListener('click', (e) => {
 
     if (elClick.classList.contains("btn-remove")) {
         elPai.remove()
+        // remover os elementos do localStorage por awui
+
     } else if (elClick.classList.contains("btn-concluido")) {
         tarefaConcluida(elClick, elPai)
     } else if (elClick.classList.contains("btn-editar")) {
@@ -122,12 +145,12 @@ add_tarefas.addEventListener('click', (e) => {
 });
 
 document.querySelector('.btn-full').addEventListener('click', () => {
-    if (add_tarefas.requestFullscreen) {
-        add_tarefas.requestFullscreen();
-    } else if (add_tarefas.webkitRequestFullscreen) {
-        add_tarefas.webkitRequestFullscreen();
-    } else if (add_tarefas.msRequestFullscreen) {
-        add_tarefas.msRequestFullscreen();
+    if (containerMain.requestFullscreen) {
+        containerMain.requestFullscreen();
+    } else if (containerMain.webkitRequestFullscreen) {
+        containerMain.webkitRequestFullscreen();
+    } else if (containerMain.msRequestFullscreen) {
+        containerMain.msRequestFullscreen();
     }
 });
 
@@ -140,3 +163,4 @@ document.querySelector('.btn-exitFull').addEventListener('click', () => {
         document.msExitFullscreen();
     }
 });
+

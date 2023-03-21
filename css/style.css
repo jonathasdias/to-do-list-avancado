@@ -86,7 +86,7 @@ body {
 .dv-btns-screen {
     width: 100%;
     text-align: end;
-    position: relative;
+    margin-bottom: 10px;
 }
 
 .btn-screen {
@@ -99,18 +99,22 @@ body {
 }
 
 #add-tarefas {
-    border: 2px solid black;
-    border-radius: 10px;
-    padding: 10px;
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
     row-gap: 5px;
+}
+
+#container {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    width: 50%;
     max-height: 300px;
     min-height: 60px;
-    overflow-y: auto;
     background-color: rgba(233, 233, 218, 0.486);
+    overflow-y: auto;
 }
 
 .tarefa {

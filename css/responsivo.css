@@ -3,7 +3,7 @@
         width: 80%;
     }
 
-    #add-tarefas {
+    #container {
         width: 80%;
     }
 }
@@ -30,7 +30,7 @@
         width: 100%;
     }
 
-    #add-tarefas {
+    #container {
         width: 98%;
         padding: 2px;
     }
