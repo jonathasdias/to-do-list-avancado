@@ -1,0 +1,37 @@
+#form-todo-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: .4rem;
+}
+
+#form-todo-list .img {
+    width: 8rem;
+    height: 8rem;
+}
+
+#form-todo-list .label-todo {
+    color: rgb(20, 68, 83);
+    font-size: 2em;
+}
+
+#form-todo-list .container-field {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#form-todo-list .container-field input[type='text'] {
+    padding: 6px;
+    width: 70%;
+    font-size: 1em;
+}
+
+#form-todo-list .container-field button[type='submit'] {
+    padding: 0 16px;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: 1.1em;
+}

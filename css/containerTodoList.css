@@ -1,0 +1,73 @@
+.container-todo-list {
+    margin-top: 1.6rem;
+    position: relative;
+}
+
+.container-todo-list .container-utilities {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: .6rem;
+    padding-right: 1rem;
+    margin-bottom: 10px;
+}
+
+#search {
+    padding: 6px;
+    width: 40%;
+}
+
+.container-todo-list .container-utilities button {
+    padding: 4px 12px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.container-todo-list #todo-list {
+    padding: 10px 0;
+    height: 18rem;
+    overflow: hidden auto;
+}
+
+.container-todo-list #todo-list #container-tasks {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 4px;
+}
+
+.container-todo-list #todo-list::-webkit-scrollbar {
+    display: none;
+}
+
+.task {
+    background-color: rgb(145, 150, 156);
+    display: flex;
+    flex-direction: column;
+    padding: 6px;
+    border-radius: 1rem;
+}
+
+.task-completed {
+    text-decoration: line-through;
+    background-color: green;
+}
+
+.container-todo-list #todo-list .task .descricao {
+    font-size: 1.1em;
+    word-wrap: break-word;
+    text-align: justify;
+    text-indent: 2rem;
+}
+
+.container-todo-list #todo-list .task .container-btns-edit {
+    width: 200px;
+    display: flex;
+    column-gap: 2px;
+}
+
+.container-todo-list #todo-list .task .container-btns-edit button {
+    font-size: 1em;
+    cursor: pointer;
+    padding: 4px 0;
+    width: 30px;
+    border-radius: 2rem;
+}

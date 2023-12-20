@@ -4,43 +4,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do-List</title>
+    <title>Todo-List-Avançado</title>
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/responsivo.css">
+    <link rel="stylesheet" href="./css/formTodoList.css">
+    <link rel="stylesheet" href="./css/formEdit.css">
+    <link rel="stylesheet" href="./css/containerTodoList.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="alertaCampoVazio esconder">
-        <h3>Não é possível adicionar uma tarefa com o campo vazio.</h3>
-        <div class="dv-barra">
-            <div class="barra"></div>
-        </div>
-    </div>
+    <main class="wapper">
+        <form id="form-todo-list">
+            <img src="./imgs/checklist.png" class="img">
 
-    <section id="todo-list">
-        <img src="./imgs/checklist.png" class="imgCheck">
-        <h2>Adicionar Tarefas:</h2>
-        <div class="container">
-            <input type="text" id="input-tarefa" placeholder="Que Tarefa Quer Adicionar?">
-            <button id="btn-add">Adicionar</button>
-        </div>
-    </section>
+            <h2 class="label-todo">Add Task</h2>
+
+            <div class="container-field">
+                <input type="text" id="input-add-task" placeholder="Create your task" required>
+                <button type="submit" id="btn-add-task" title="Add task"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </form>
+        
+        <section class="container-todo-list">
+            <section id="todo-list">
+
+                <form id="form-edit" class="form-edit-style">
+
+                    <div class="container-edit">
+                        <label for="input-edit-description">Edit Description</label>
+                        <input type="text" id="input-edit-description" placeholder="Your new description...">
+                    </div>
     
-    <main id="container">
-        <div class="dv-btns-screen">
-            <button class="btn-full btn-screen" title="Abrir Tela Cheia Das Tarefas">
-                <i class="fa-solid fa-maximize"></i>
-            </button>
-            <button class="btn-exitFull btn-screen" title="Fechar Tela Cheia Das Tarefas">
-                <i class="fa-solid fa-minimize"></i>
-            </button>
-        </div>
-        <section id="add-tarefas"></section>
+                    <div class="container-btns">
+                        <button id='btn-confirm'><i class="fa-solid fa-check"></i></button>
+                        <button id='btn-cancel'><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+    
+                </form>
+
+                <div class="container-utilities">
+
+                    <input type="search" id="search" placeholder="Search for your task...">
+        
+                    <button id="btn-enlarge-screen" title="Open task list full screen">
+                        <i class="fa-solid fa-maximize"></i>
+                    </button>
+                    <button id="btn-minimize-screen" title="Close task list full screen">
+                        <i class="fa-solid fa-minimize"></i>
+                    </button>
+        
+                </div>
+
+                <div id="container-tasks"></div>
+            </section>
+        </section>
     </main>
 
-    <script src="./javascript/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./javascript/todoList.js"></script>
+    <script src="./javascript/screen.js"></script>
+    <script src="./javascript/search.js"></script>
 </body>
 </html>
