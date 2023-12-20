@@ -1,2 +1,2 @@
-# to-do-list
-Projeto to-do-list-simples, desenvolvido em html, css e javascript.
+# todo-list-avancado
+Projeto todo-list-avancado, desenvolvido em html, css e javascript.
