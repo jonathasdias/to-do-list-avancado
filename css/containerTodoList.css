@@ -7,8 +7,13 @@
     display: flex;
     justify-content: flex-end;
     column-gap: .6rem;
-    padding-right: 1rem;
     margin-bottom: 10px;
+}
+
+#filter-options {
+    max-width: 6rem;
+    min-width: 1rem;
+    font-weight: bolder;
 }
 
 #search {
@@ -31,7 +36,8 @@
 .container-todo-list #todo-list #container-tasks {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 4px;
+    gap: 6px;
+    padding: 2px 4px 8px 4px;
 }
 
 .container-todo-list #todo-list::-webkit-scrollbar {

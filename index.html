@@ -46,6 +46,12 @@
 
                 <div class="container-utilities">
 
+                    <select id="filter-options">
+                        <option value="all">All</option>
+                        <option value="complete">Complete</option>
+                        <option value="incomplete">Incomplete</option>
+                    </select>
+
                     <input type="search" id="search" placeholder="Search for your task...">
         
                     <button id="btn-enlarge-screen" title="Open task list full screen">
@@ -63,7 +69,7 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="./javascript/todoList.js"></script>
+    <script type="module" src="./javascript/todoList.js"></script>
     <script src="./javascript/screen.js"></script>
     <script src="./javascript/search.js"></script>
 </body>

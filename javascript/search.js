@@ -1,16 +1,18 @@
 const search = document.getElementById('search');
 
-search.addEventListener('input', (e)=>{
+function searchTask(e) {
     let el = e.target;
-    let taskList = JSON.parse(localStorage.getItem('tasks')) || [];
-    let taskResearched = taskList.filter(item=> item.descricao.toUpperCase().includes(el.value.toUpperCase()))
+    let descricoes = document.querySelectorAll('.descricao');
+    
+    descricoes.forEach(descricao=> {
+        let taskText = descricao.innerHTML.toLocaleLowerCase();
 
-    if(taskResearched) {
-        container_tasks.innerHTML = '';
-        taskResearched.forEach((task, index)=> {
-            container_tasks.innerHTML += todo(task, index);
-        })
-    }else {
-        loadTasks();
-    }
-})
+        if(taskText.includes(el.value.toLocaleLowerCase())) {
+           descricao.parentNode.style.display = 'block';
+        }else {
+            descricao.parentNode.style.display = 'none';
+        }
+    })
+}
+
+search.addEventListener('input', searchTask);
