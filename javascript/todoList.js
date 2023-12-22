@@ -45,6 +45,7 @@ function edit(index) {
     let btn_cancel = document.getElementById('btn-cancel');
     let input_edit = document.getElementById('input-edit-description');
 
+    container_tasks.style.setProperty('display', 'none')
     form_edit.style.setProperty('display', 'grid')
     input_edit.value = task_list[index].descricao;
     input_edit.focus();
@@ -63,12 +64,14 @@ function edit(index) {
         task_list[index].descricao = input_edit.value;
         saveTasksToLocalStorage(task_list);
         form_edit.style.setProperty('display', 'none');
+        container_tasks.style.setProperty('display', 'grid');
         loadTasks()
     })
     
     btn_cancel.addEventListener('click', (e)=> {
         e.preventDefault();
         form_edit.style.setProperty('display', 'none');
+        container_tasks.style.setProperty('display', 'grid');
     })
 }
 

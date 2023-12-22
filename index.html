@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo-List-Avançado</title>
+    <title>Todo List Avançado</title>
+    <link rel="icon" href="./imgs/checklist.png">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/formTodoList.css">
     <link rel="stylesheet" href="./css/formEdit.css">
@@ -30,20 +31,6 @@
         <section class="container-todo-list">
             <section id="todo-list">
 
-                <form id="form-edit" class="form-edit-style">
-
-                    <div class="container-edit">
-                        <label for="input-edit-description">Edit Description</label>
-                        <input type="text" id="input-edit-description" placeholder="Your new description...">
-                    </div>
-    
-                    <div class="container-btns">
-                        <button id='btn-confirm'><i class="fa-solid fa-check"></i></button>
-                        <button id='btn-cancel'><i class="fa-solid fa-xmark"></i></button>
-                    </div>
-    
-                </form>
-
                 <div class="container-utilities">
 
                     <select id="filter-options">
@@ -62,6 +49,20 @@
                     </button>
         
                 </div>
+
+                <form id="form-edit" class="form-edit-style">
+
+                    <div class="container-edit">
+                        <label for="input-edit-description">Edit Description</label>
+                        <input type="text" id="input-edit-description" placeholder="Your new description...">
+                    </div>
+    
+                    <div class="container-btns">
+                        <button id='btn-confirm'><i class="fa-solid fa-check"></i></button>
+                        <button id='btn-cancel'><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+    
+                </form>
 
                 <div id="container-tasks"></div>
             </section>
