@@ -1,16 +1,18 @@
+import { arr_filter_tasks } from "./taskFilter.js";
+
 const search = document.getElementById('search');
 
 function searchTask(e) {
     let el = e.target;
-    let descricoes = document.querySelectorAll('.descricao');
     
-    descricoes.forEach(descricao=> {
-        let taskText = descricao.innerHTML.toLocaleLowerCase();
+    arr_filter_tasks.forEach(task=> {
+        let description = task.querySelector('.description');
+        let taskText = task.querySelector('.description').innerHTML.toLocaleLowerCase();
 
         if(taskText.includes(el.value.toLocaleLowerCase())) {
-           descricao.parentNode.style.display = 'block';
+            description.parentNode.style.display = 'block';
         }else {
-            descricao.parentNode.style.display = 'none';
+            description.parentNode.style.display = 'none';
         }
     })
 }

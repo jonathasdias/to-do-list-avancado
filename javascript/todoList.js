@@ -4,7 +4,7 @@ const form_todo_list = document.getElementById('form-todo-list');
 const task = document.getElementById('input-add-task');
 const form_edit  = document.getElementById('form-edit');
 
-function todo({descricao, completed}, index) {
+function todo({description, completed}, index) {
     const article = document.createElement('article');
     article.classList = `task ${completed? 'task-completed':''}`;
 
@@ -27,8 +27,8 @@ function todo({descricao, completed}, index) {
     btn_delete.onclick = ()=> del(index);
 
     const p = document.createElement('p');
-    p.className = "descricao";
-    p.innerHTML = descricao;
+    p.className = "description";
+    p.innerHTML = description;
 
 
     div.appendChild(btn_edit)
@@ -47,7 +47,7 @@ function edit(index) {
 
     container_tasks.style.setProperty('display', 'none')
     form_edit.style.setProperty('display', 'grid')
-    input_edit.value = task_list[index].descricao;
+    input_edit.value = task_list[index].description;
     input_edit.focus();
 
     form_edit.addEventListener('submit', (e)=> {
@@ -61,7 +61,7 @@ function edit(index) {
             });
             return;
         }
-        task_list[index].descricao = input_edit.value;
+        task_list[index].description = input_edit.value;
         saveTasksToLocalStorage(task_list);
         form_edit.style.setProperty('display', 'none');
         container_tasks.style.setProperty('display', 'grid');
@@ -110,7 +110,7 @@ function AddTodo(e) {
     e.preventDefault();
 
     let task_list = JSON.parse(localStorage.getItem('tasks')) || [];
-    let newTask = {descricao:task.value, completed: false};
+    let newTask = {description:task.value, completed: false};
 
     if(task.value.trim() === '') {
         Swal.fire({
@@ -135,4 +135,7 @@ function saveTasksToLocalStorage(tasks) {
 }
 
 form_todo_list.addEventListener('submit', AddTodo);
-document.addEventListener('DOMContentLoaded', loadTasks);
+document.addEventListener('DOMContentLoaded', ()=> {
+    loadTasks();
+    task.focus();
+});
